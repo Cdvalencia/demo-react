@@ -1,6 +1,6 @@
 # Esqueleto — React
 
-Backoffice base según [ESQUELETO_PROMPT.md](../ESQUELETO_PROMPT.md): auth, dashboard, CRUD usuarios, datos en localStorage, SCSS, Iconify.
+Backoffice base: login, dashboard, CRUD de usuarios. Datos en localStorage. Layout con sidebar colapsable. SCSS + Iconify.
 
 ## Stack
 
@@ -28,4 +28,4 @@ npm run preview
 
 ## Credenciales (login simulado)
 
-Cualquier email y contraseña; la sesión se persiste en `localStorage` (`auth_session`). Usuarios en `esqueleto_users`.
+Cualquier email y contraseña. Sesión en `localStorage` (`auth_session`). Usuarios en `esqueleto_users`.
