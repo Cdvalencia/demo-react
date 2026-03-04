@@ -1,0 +1,112 @@
+@use '../styles/util/variables' as *;
+@use '../styles/util/mixin' as *;
+
+.user-form {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100%;
+  width: 100%;
+  padding-top: $spacing-6;
+}
+
+.user-form > section {
+  background-color: $color-surface;
+  border-radius: $radius-lg;
+  padding: $spacing-6;
+  box-shadow: $shadow-md;
+  border: 1px solid $color-border;
+  max-width: 420px;
+  width: 100%;
+}
+
+.user-form > section > header {
+  margin-bottom: $spacing-6;
+}
+
+.user-form > section > header > button:first-child {
+  margin-bottom: $spacing-3;
+  @include button-base;
+  padding: $spacing-2 $spacing-4;
+  border-color: $color-border;
+  background-color: transparent;
+  color: $color-text;
+}
+
+.user-form > section > header > button:first-child > iconify-icon {
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.user-form > section > header > h2 {
+  margin: 0;
+  font-size: $font-size-xl;
+  font-weight: 600;
+  color: $color-text;
+}
+
+.user-form > section > form {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-4;
+}
+
+.user-form > section > form > div:not(:has(label)):not(:has(button)) {
+  font-size: $font-size-sm;
+  color: $color-danger;
+}
+
+.user-form > section > form > div {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-1;
+}
+
+.user-form > section > form > div > label {
+  font-size: $font-size-sm;
+  font-weight: 500;
+  color: $color-text;
+}
+
+.user-form > section > form > div > input,
+.user-form > section > form > div > select {
+  padding: $spacing-2 $spacing-3;
+  font-size: $font-size-sm;
+  border-radius: $radius-md;
+  border: 1px solid $color-border;
+  outline: none;
+}
+
+.user-form > section > form > div > input:focus,
+.user-form > section > form > div > select:focus {
+  border-color: $c5;
+}
+
+.user-form > section > form > div:last-child {
+  flex-direction: row;
+  gap: $spacing-3;
+  margin-top: $spacing-2;
+}
+
+.user-form > section > form > div:last-child > button {
+  @include button-base;
+  padding: $spacing-2 $spacing-4;
+  display: inline-flex;
+  align-items: center;
+  gap: $spacing-2;
+}
+
+.user-form > section > form > div:last-child > button > iconify-icon {
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.user-form > section > form > div:last-child > button[type="button"] {
+  border-color: $color-border;
+  background-color: transparent;
+  color: $color-text;
+}
+
+.user-form > section > form > div:last-child > button[type="submit"] {
+  @include button-variant($c1);
+}

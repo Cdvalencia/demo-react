@@ -1,0 +1,54 @@
+@use '../styles/util/variables' as *;
+
+.login > form {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-4;
+}
+
+.login > form > div {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-1;
+}
+
+.login > form > div > label {
+  font-size: $font-size-sm;
+  font-weight: 500;
+  color: $color-text;
+}
+
+.login > form > div > input {
+  padding: $spacing-2 $spacing-3;
+  font-size: $font-size-sm;
+  border-radius: $radius-md;
+  border: 1px solid $color-border;
+  outline: none;
+}
+
+.login > form > div > input:focus {
+  border-color: $c5;
+  box-shadow: 0 0 0 1px rgba($c5, 0.2);
+}
+
+.login > form > div:not(:has(label)) {
+  font-size: $font-size-xs;
+  color: $color-danger;
+}
+
+.login > form > button {
+  margin-top: $spacing-2;
+  padding: $spacing-2 $spacing-3;
+  border-radius: $radius-md;
+  border: none;
+  background-color: $c1;
+  color: $color-surface;
+  font-size: $font-size-sm;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.login > form > button:disabled {
+  opacity: 0.7;
+  cursor: default;
+}

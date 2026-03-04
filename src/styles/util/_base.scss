@@ -1,0 +1,40 @@
+@use './variables' as *;
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: $font-sans-primary;
+  font-size: $font-size-sm;
+  color: $color-text;
+  background-color: $color-bg;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: $color-bg;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $c1;
+  border-radius: $radius-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: $c2;
+}
+
+iconify-icon {
+  margin-top: -1px;
+}

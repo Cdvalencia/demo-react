@@ -1,0 +1,188 @@
+@use '../styles/util/variables' as *;
+@use '../styles/util/mixin' as *;
+
+$sidebar-width: 240px;
+$sidebar-width-collapsed: 72px;
+
+.admin-layout {
+  display: grid;
+  grid-template-columns: $sidebar-width 1fr;
+  min-height: 100vh;
+  background-color: $color-bg;
+  transition: grid-template-columns 0.2s ease;
+
+  &[data-collapsed] {
+    grid-template-columns: $sidebar-width-collapsed 1fr;
+  }
+}
+
+.admin-layout > aside {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-6;
+  padding: $spacing-4;
+  background-color: $c1;
+  color: $color-surface;
+  overflow: hidden;
+  transition: padding 0.2s ease;
+}
+
+.admin-layout[data-collapsed] > aside {
+  padding: $spacing-3;
+}
+
+.admin-layout > aside > div:first-child {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: $spacing-2;
+  min-height: 2.5rem;
+}
+
+.admin-layout[data-collapsed] > aside > div:first-child {
+  justify-content: center;
+}
+
+.admin-layout > aside > div:first-child > img {
+  height: 2rem;
+  width: auto;
+  max-width: 100%;
+  display: block;
+  object-fit: contain;
+}
+
+.admin-layout[data-collapsed] > aside > div:first-child > img {
+  display: none;
+}
+
+.admin-layout > aside > div:first-child > button {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  padding: 0;
+  border: none;
+  border-radius: $radius-md;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+
+  &:hover {
+    background-color: $c2;
+  }
+}
+
+.admin-layout > aside > div:first-child > button > iconify-icon {
+  font-size: 1.35rem;
+}
+
+.admin-layout > aside > nav {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-1;
+}
+
+.admin-layout > aside > nav > a {
+  display: flex;
+  align-items: center;
+  gap: $spacing-3;
+  padding: $spacing-2 $spacing-3;
+  color: inherit;
+  text-decoration: none;
+  border-radius: $radius-md;
+  font-size: $font-size-sm;
+  transition: background-color 0.15s ease;
+
+  &:hover {
+    background-color: $c2;
+  }
+
+  &.is-active {
+    background-color: $c2;
+  }
+}
+
+.admin-layout[data-collapsed] > aside > nav > a {
+  justify-content: center;
+  padding: $spacing-2;
+}
+
+.admin-layout > aside > nav > a > iconify-icon {
+  flex-shrink: 0;
+  font-size: 1.35rem;
+  width: 1.35em;
+  height: 1.35em;
+}
+
+.admin-layout > aside > nav > a > span {
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.admin-layout[data-collapsed] > aside > nav > a > span {
+  @include visually-hidden;
+}
+
+.admin-layout > aside > button {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  gap: $spacing-3;
+  padding: $spacing-2 $spacing-3;
+  border-radius: $radius-md;
+  border: 1px solid $c3;
+  background-color: transparent;
+  color: inherit;
+  cursor: pointer;
+  font-size: $font-size-sm;
+  transition: background-color 0.15s ease;
+
+  &:hover {
+    background-color: $c2;
+  }
+}
+
+.admin-layout[data-collapsed] > aside > button {
+  justify-content: center;
+  padding: $spacing-2;
+}
+
+.admin-layout[data-collapsed] > aside > button > span {
+  @include visually-hidden;
+}
+
+.admin-layout > aside > button > iconify-icon {
+  flex-shrink: 0;
+  font-size: 1.35rem;
+  width: 1.35em;
+  height: 1.35em;
+}
+
+.admin-layout > main {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.admin-layout > main > header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: $spacing-3 $spacing-6;
+  background-color: $color-surface;
+  border-bottom: 1px solid $color-border;
+}
+
+.admin-layout > main > header > span {
+  font-size: $font-size-sm;
+  color: $color-text-muted;
+}
+
+.admin-layout > main > section {
+  flex: 1;
+  padding: $spacing-6;
+  min-height: 0;
+}

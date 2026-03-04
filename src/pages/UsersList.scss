@@ -1,0 +1,160 @@
+@use '../styles/util/variables' as *;
+
+.users-list > section {
+  background-color: $color-surface;
+  border-radius: $radius-lg;
+  padding: $spacing-5 $spacing-6;
+  box-shadow: $shadow-md;
+}
+
+.users-list > section > header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: $spacing-3;
+  margin-bottom: $spacing-4;
+}
+
+.users-list > section > header > h2 {
+  margin: 0;
+  font-size: $font-size-lg;
+  font-weight: 600;
+  color: $color-text;
+}
+
+.users-list > section > header > a {
+  display: inline-flex;
+  align-items: center;
+  gap: $spacing-2;
+  padding: $spacing-2 $spacing-4;
+  border-radius: $radius-md;
+  font-size: $font-size-sm;
+  font-weight: 500;
+  text-decoration: none;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: filter 0.15s ease, box-shadow 0.15s ease;
+  background-color: $c1;
+  color: $color-surface;
+
+  &:hover {
+    filter: brightness(1.05);
+  }
+
+  & > iconify-icon {
+    font-size: 1.1rem;
+    flex-shrink: 0;
+  }
+}
+
+.users-list > section > table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: $font-size-sm;
+}
+
+.users-list > section > table th,
+.users-list > section > table td {
+  padding: $spacing-2 $spacing-3;
+  text-align: left;
+}
+
+.users-list > section > table thead {
+  border-bottom: 1px solid $color-border;
+}
+
+.users-list > section > table tbody tr:nth-child(even) {
+  background-color: $color-bg;
+}
+
+.users-list > section > table tbody td:first-child > code {
+  font-family: ui-monospace, monospace;
+  font-size: 0.85em;
+  padding: $spacing-1 $spacing-2;
+  background-color: $color-bg;
+  border-radius: $radius-sm;
+}
+
+.users-list > section > table tbody td:last-child {
+  display: flex;
+  gap: $spacing-2;
+}
+
+.users-list > section > table tbody td:last-child > a {
+  display: inline-flex;
+  align-items: center;
+  gap: $spacing-2;
+  padding: $spacing-2 $spacing-4;
+  border-radius: $radius-md;
+  font-size: $font-size-sm;
+  font-weight: 500;
+  text-decoration: none;
+  border: 1px solid transparent;
+  cursor: pointer;
+  background-color: $c4;
+  color: $color-surface;
+
+  &:hover {
+    filter: brightness(1.08);
+  }
+
+  & > iconify-icon {
+    font-size: 1.1rem;
+    flex-shrink: 0;
+  }
+}
+
+.users-list > section > table tbody td:last-child > button {
+  display: inline-flex;
+  align-items: center;
+  gap: $spacing-2;
+  padding: $spacing-2 $spacing-4;
+  border-radius: $radius-md;
+  font-size: $font-size-sm;
+  font-weight: 500;
+  border: 1px solid transparent;
+  cursor: pointer;
+  background-color: $color-danger;
+  color: $color-surface;
+
+  &:hover {
+    filter: brightness(1.1);
+  }
+
+  & > iconify-icon {
+    font-size: 1.1rem;
+    flex-shrink: 0;
+  }
+}
+
+.users-list > section > p {
+  margin: $spacing-2 0 0;
+  font-size: $font-size-sm;
+  color: $color-text-muted;
+}
+
+.users-list > section > p + a {
+  display: inline-flex;
+  align-items: center;
+  gap: $spacing-2;
+  margin-top: $spacing-2;
+  padding: $spacing-2 $spacing-4;
+  border-radius: $radius-md;
+  font-size: $font-size-sm;
+  font-weight: 500;
+  text-decoration: none;
+  border: 1px solid transparent;
+  cursor: pointer;
+  background-color: $c1;
+  color: $color-surface;
+
+  &:hover {
+    filter: brightness(1.05);
+  }
+
+  & > iconify-icon {
+    font-size: 1.1rem;
+    flex-shrink: 0;
+  }
+}
